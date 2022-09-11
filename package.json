@@ -1,0 +1,24 @@
+{
+  "name": "todo-odin",
+  "version": "1.0.0",
+  "description": "todo list project from TOP fullstack js path",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axizeaus/todo-odin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Axizeaus/todo-odin/issues"
+  },
+  "homepage": "https://github.com/Axizeaus/todo-odin#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
