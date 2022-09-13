@@ -1,6 +1,43 @@
-export function addTodo(obj){
-  localStorage.setItem('0', JSON.stringify(obj));
+export function addTodo(obj, projectName){
+  let key = generateKey(projectName);
+  console.log(key);
+  localStorage.setItem(key, JSON.stringify(obj));
 }
+
+export function getTodo(name){
+  return localStorage.getItem(name)
+}
+
+export function deleteTodo(name){
+  if(localStorage.getItem(name)){
+    localStorage.removeItem(name);
+  } else {
+    // show error
+  }
+}
+
+function generateKey(projectName){
+  let arr = []
+  if(localStorage.getItem(projectName)){
+    arr = JSON.parse(localStorage.getItem(projectName));
+  } else {
+    arr = [];
+    localStorage.setItem(projectName, JSON.stringify(arr))
+  }
+  let value;
+  if (arr.length > 0){
+    value = arr[arr.length-1];
+    value += 1;
+  } else {
+    value = 0;
+  }
+  arr[arr.length] = value;
+  let modifiedData = arr;
+  localStorage.removeItem(projectName);
+  localStorage.setItem(projectName, JSON.stringify(modifiedData))
+  return `${projectName}+${value}`;
+}
+
 
 // function storageAvailable(type) {
 //   'use strict';
@@ -35,5 +72,4 @@ export function addTodo(obj){
 //   // display error message
 // }
 
-
-  
+// how about we use arrays for each projects?

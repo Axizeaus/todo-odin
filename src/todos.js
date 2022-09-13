@@ -11,61 +11,61 @@ class Todo{
         this.project = project;
     }
 
-    // get title(){
-    //     return this.title;
-    // }
+    get todoTitle(){
+        return this.title;
+    }
 
-    // set title(newTitle){
-    //     this.title = newTitle;
-    // }
+    set todoTitle(newTitle){
+        this.title = newTitle;
+    }
 
-    // get description(){
-    //     return this.description;
-    // }
+    get todoDescription(){
+        return this.description;
+    }
 
-    // set description(newDescription){
-    //     this.description = newDescription
-    // }
+    set todoDescription(newDescription){
+        this.description = newDescription;
+    }
 
-    // get dueDate(){
-    //     return this.dueDate;
-    // }
+    get todoDueDate(){
+        return this.dueDate;
+    }
 
-    // set dueDate(newDueDate){
-    //     this.dueDate = newDueDate;
-    // }
+    set todoDueDate(newDueDate){
+        this.dueDate = newDueDate;
+    }
 
-    // get priority(){
-    //     return this.priority;
-    // }
+    get todoPriority(){
+        return this.priority;
+    }
 
-    // set priority(newPriority){
-    //     this.priority = newPriority
-    // }
+    set todoPriority(newPriority){
+        this.priority = newPriority;
+    }
 
-    // get note(){
-    //     return this.note;
-    // }
+    get todoNote(){
+        return this.note;
+    }
 
-    // set note(newNote){
-    //     this.note = newNote
-    // }
+    set todoNote(newNote){
+        this.note = newNote;
+    }
 
-    // get check(){
-    //     return this.check;
-    // }
+    get todoCheck(){
+        return this.check;
+    }
 
-    // set check(newCheck){
-    //     this.check = newCheck
-    // }
+    set todoCheck(newCheck){
+        this.check = newCheck;
+    }
 
-    // get project(){
-    //     return this.project
-    // } 
+    get todoProject(){
+        return this.project
+    } 
 
-    // set project(newProject){
-    //     this.project = newProject
-    // }
+    set todoProject(newProject){
+        this.project = newProject
+    }
 }
 
 export function newTodo(
@@ -77,6 +77,7 @@ export function newTodo(
     check = false,
     project = 'default'){
     const obj = new Todo(title, description, dueDate, priority, note, check, project);
-    addTodo(obj);
+    console.log(obj);
+    addTodo(obj, project);
 }
 
