@@ -5,7 +5,20 @@ export function addTodo(obj, projectName){
 }
 
 export function getTodo(name){
-  return localStorage.getItem(name)
+  if(localStorage.getItem(name)){
+    return JSON.parse(localStorage.getItem(name))
+  } else {
+    return; // error message
+  }
+}
+
+export function modifyTodo(id, fieldName, newValue){
+  if(localStorage.getItem(id)){
+    let data = JSON.parse(localStorage.getItem(id));
+    data[`${fieldName}`] = newValue;
+    console.log(data);
+    localStorage.setItem(id, JSON.stringify(data))
+  }
 }
 
 export function deleteTodo(name){

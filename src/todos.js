@@ -1,4 +1,4 @@
-import { addTodo } from "./storage";
+import { addTodo, deleteTodo, getTodo, modifyTodo } from "./storage";
 
 class Todo{
     constructor(title, description, dueDate, priority, note, check, project ){
@@ -81,3 +81,10 @@ export function newTodo(
     addTodo(obj, project);
 }
 
+export function updateTodo(id, field, newValues){
+    modifyTodo(id, field, newValues)
+}
+
+export function retriveTodo(id){
+    return getTodo(id);
+}
